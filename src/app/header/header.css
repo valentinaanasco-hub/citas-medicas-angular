@@ -1,0 +1,64 @@
+.header-academico {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: #fff;
+  padding: 2.75rem 1rem 2.25rem;
+  text-align: center;
+}
+
+.header-titulo {
+  font-weight: 700;
+  font-size: clamp(1.6rem, 4.2vw, 2.6rem);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: #fff;
+  max-width: 900px;
+  margin: 0 auto 0.4rem;
+}
+
+.header-institucion {
+  font-weight: 600;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0;
+}
+
+.header-divisor {
+  width: 56px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.6);
+  margin: 1rem auto 1.25rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.social-icons a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-size: 1.15rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+  background: #fff;
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.social-icons a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}

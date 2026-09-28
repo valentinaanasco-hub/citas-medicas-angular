@@ -1,0 +1,42 @@
+.carrusel-clinica {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(22, 36, 31, 0.15);
+}
+
+.carrusel-clinica .carousel-item {
+  position: relative;
+}
+
+.carrusel-clinica .carousel-inner img {
+  height: 420px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.carrusel-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2rem 2rem 1.5rem;
+  background: linear-gradient(0deg, rgba(22, 36, 31, 0.85) 0%, rgba(22, 36, 31, 0) 100%);
+  color: #fff;
+  text-align: left;
+}
+
+.carrusel-overlay h3 {
+  color: #fff;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  margin-bottom: 0.25rem;
+}
+
+.carrusel-overlay p {
+  color: var(--color-primary-light);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.carrusel-clinica .carousel-indicators [data-bs-target] {
+  background-color: var(--color-accent);
+}

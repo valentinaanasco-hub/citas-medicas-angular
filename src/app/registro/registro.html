@@ -1,0 +1,81 @@
+<div class="container-fluid mt-5 mb-5" id="seccion3">
+  <h1 class="text-center mb-2">Registro de Nuevos Usuarios</h1>
+  <p class="lead text-center mb-4">Diligencie el siguiente formulario para registrarse como paciente de la clínica.</p>
+
+  <form #formPaciente="ngForm" (ngSubmit)="registrar()" class="form-paciente">
+
+    <div class="form-paciente-icono">
+      <i class="fas fa-user-plus"></i>
+    </div>
+
+    @if (mensaje) {
+      <div class="alert" [class.alert-success]="tipoMensaje === 'exito'" [class.alert-danger]="tipoMensaje === 'error'" role="alert">
+        {{ mensaje }}
+      </div>
+    }
+
+    <div class="row">
+      <div class="col-12 col-md-6 mb-3">
+        <label for="nombresPaciente" class="form-label">Nombres</label>
+        <input type="text" id="nombresPaciente" name="nombresPaciente" class="form-control"
+          placeholder="Nombres" required [(ngModel)]="nombres" (blur)="validarNombres()">
+        <label class="text-danger form-text">{{ errores.nombres }}</label>
+      </div>
+
+      <div class="col-12 col-md-6 mb-3">
+        <label for="apellidosPaciente" class="form-label">Apellidos</label>
+        <input type="text" id="apellidosPaciente" name="apellidosPaciente" class="form-control"
+          placeholder="Apellidos" required [(ngModel)]="apellidos" (blur)="validarApellidos()">
+        <label class="text-danger form-text">{{ errores.apellidos }}</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-6 mb-3">
+        <label for="tipoIdentificacion" class="form-label">Tipo de Identificación</label>
+        <select id="tipoIdentificacion" name="tipoIdentificacion" class="form-select"
+          [(ngModel)]="tipoIdentificacion" (blur)="validarTipoIdentificacion()">
+          <option value="" disabled selected>Seleccione un tipo</option>
+          <option value="cc">Cédula de Ciudadanía</option>
+          <option value="ti">Tarjeta de Identidad</option>
+          <option value="ce">Cédula de Extranjería</option>
+          <option value="pas">Pasaporte</option>
+        </select>
+        <label class="text-danger form-text">{{ errores.tipoIdentificacion }}</label>
+      </div>
+
+      <div class="col-12 col-md-6 mb-3">
+        <label for="numeroIdentificacion" class="form-label">Número de Identificación</label>
+        <input type="text" id="numeroIdentificacion" name="numeroIdentificacion" class="form-control"
+          placeholder="Número de identificación" required
+          [(ngModel)]="numeroIdentificacion" (blur)="validarNumeroIdentificacion()">
+        <label class="text-danger form-text">{{ errores.numeroIdentificacion }}</label>
+      </div>
+    </div>
+    <div class="form-text mb-3">Este número será tu dato de confirmación para agendar citas.</div>
+
+    <fieldset class="mb-4">
+      <legend class="form-label">Género</legend>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" id="femenino" name="genero" value="femenino"
+          [(ngModel)]="genero" (change)="validarGenero()">
+        <label class="form-check-label" for="femenino">Femenino</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" id="masculino" name="genero" value="masculino"
+          [(ngModel)]="genero" (change)="validarGenero()">
+        <label class="form-check-label" for="masculino">Masculino</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" id="otro" name="genero" value="otro"
+          [(ngModel)]="genero" (change)="validarGenero()">
+        <label class="form-check-label" for="otro">Otro</label>
+      </div>
+      <label class="text-danger form-text d-block">{{ errores.genero }}</label>
+    </fieldset>
+
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-primary px-4">Registrar</button>
+    </div>
+  </form>
+</div>

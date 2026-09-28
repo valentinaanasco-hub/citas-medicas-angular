@@ -1,0 +1,16 @@
+<header class="header-academico">
+  <div class="container-fluid">
+    <h1 class="header-titulo">{{ tituloSistema }}</h1>
+    <p class="header-institucion">{{ nombreInstitucion }}</p>
+    <div class="header-divisor"></div>
+
+    <nav class="social-icons" aria-label="Enlaces de contacto">
+      @for (enlace of enlaces; track enlace.nombre) {
+        <a [href]="enlace.url" [title]="enlace.nombre" [attr.aria-label]="enlace.nombre"
+          [target]="enlace.externo ? '_blank' : '_self'" rel="noopener noreferrer">
+          <i [class]="enlace.icono"></i>
+        </a>
+      }
+    </nav>
+  </div>
+</header>

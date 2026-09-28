@@ -1,0 +1,46 @@
+.footer-academico {
+  margin-top: 3rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-academico p {
+  margin: 0.2rem 0;
+  font-size: 0.85rem;
+}
+
+.social-icons-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.social-icons-footer a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icons-footer a:hover {
+  background: #fff;
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.social-icons-footer a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}

@@ -1,0 +1,51 @@
+<div class="container-fluid mt-5" id="seccion2">
+  <h1 class="text-center mb-4">Nuestros Médicos y Especialidades</h1>
+  <div class="row">
+
+    <!-- Barra lateral: 12/12 en <576px, 2/12 en >=576px, 4/12 en >=768px -->
+    <aside class="col-12 col-sm-2 col-md-4">
+      <h2>Especialidades</h2>
+      <ul class="lista-especialidades">
+        @for (esp of especialidades; track esp.clave) {
+          <li>
+            <a href="#" class="especialidad-link" [class.active]="esp.clave === especialidadSeleccionada"
+              (click)="mostrarDescripcion(esp.clave); $event.preventDefault()">{{ esp.nombre }}</a>
+          </li>
+        }
+      </ul>
+
+      @if (descripcionEspecialidad) {
+        <div class="descripcion-especialidad">
+          <p>{{ descripcionEspecialidad }}</p>
+        </div>
+      }
+    </aside>
+
+    <!-- Médicos: 12/12 en <576px, 10/12 en >=576px, 8/12 en >=768px -->
+    <main class="col-12 col-sm-10 col-md-8">
+      <h2>Nuestros Médicos</h2>
+      <div class="row g-4">
+
+        <!-- 2 por fila en sm, 3 en md, 4 en lg -->
+        @for (medico of medicos; track medico.id) {
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="ficha-medico" [style.--accent]="colorPorEspecialidad(medico.especialidad)">
+              <div class="ficha-medico-foto">
+                <img [src]="medico.imagen" [alt]="medico.nombre">
+              </div>
+              <div class="ficha-medico-body">
+                <span class="ficha-medico-tag">{{ medico.especialidad }}</span>
+                <h5>{{ medico.nombre }}</h5>
+                <p class="ficha-medico-experiencia"><i class="fas fa-briefcase-medical"></i> {{ medico.aniosExperiencia }} años de experiencia</p>
+                <p class="ficha-medico-desc">{{ medico.descripcion }}</p>
+                <p class="ficha-medico-horario"><i class="fas fa-clock"></i> {{ medico.horario }}</p>
+                <button class="btn btn-primary btn-sm">Agendar Cita</button>
+              </div>
+            </div>
+          </div>
+        }
+
+      </div>
+    </main>
+  </div>
+</div>

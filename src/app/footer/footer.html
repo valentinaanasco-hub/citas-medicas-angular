@@ -1,0 +1,15 @@
+<footer class="footer-academico">
+  <div class="container-fluid">
+    <p>Ingeniería del Software III — Sistema de Agendamiento de Citas Médicas</p>
+    <p>&copy; {{ anio }} {{ institucion }}. Todos los derechos reservados.</p>
+
+    <nav class="social-icons-footer" aria-label="Enlaces de contacto">
+      @for (enlace of enlaces; track enlace.nombre) {
+        <a [href]="enlace.url" [title]="enlace.nombre" [attr.aria-label]="enlace.nombre"
+          [target]="enlace.externo ? '_blank' : '_self'" rel="noopener noreferrer">
+          <i [class]="enlace.icono"></i>
+        </a>
+      }
+    </nav>
+  </div>
+</footer>

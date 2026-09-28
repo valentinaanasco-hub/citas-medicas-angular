@@ -1,0 +1,130 @@
+h2 {
+  font-size: 1.35rem;
+  margin-bottom: 1.1rem;
+}
+
+.lista-especialidades {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.especialidad-link {
+  display: block;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.especialidad-link:hover {
+  background-color: var(--color-primary-light);
+}
+
+.especialidad-link.active {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.descripcion-especialidad {
+  margin-top: 1.25rem;
+  padding: 1rem 1.1rem;
+  background-color: #fff;
+  border-left: 3px solid var(--color-primary);
+  border-radius: 4px;
+  animation: fadeIn 0.25s ease;
+}
+
+.descripcion-especialidad p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-ink-soft);
+  line-height: 1.5;
+}
+
+.ficha-medico {
+  --accent: var(--color-primary);
+  background-color: #9BC1BC;
+  color: #204446;
+  border: 2px solid #475755;
+  border-top: 5px solid var(--accent);
+  border-radius: 14px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 1.25rem 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ficha-medico:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(27, 42, 59, 0.2);
+}
+
+.ficha-medico-foto {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 3px var(--accent);
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.ficha-medico-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ficha-medico-tag {
+  display: inline-block;
+  background-color: var(--accent);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  margin-bottom: 0.6rem;
+}
+
+.ficha-medico h5 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: #204446;
+  margin-bottom: 0.4rem;
+}
+
+.ficha-medico-experiencia,
+.ficha-medico-horario {
+  font-size: 0.8rem;
+  color: #204446;
+  margin-bottom: 0.4rem;
+}
+
+.ficha-medico-experiencia i,
+.ficha-medico-horario i {
+  color: #204446;
+  margin-right: 0.3rem;
+}
+
+.ficha-medico-desc {
+  font-size: 0.85rem;
+  color: #204446;
+  margin-bottom: 0.9rem;
+  flex-grow: 1;
+}
+
+.ficha-medico .btn-primary {
+  width: 100%;
+}
